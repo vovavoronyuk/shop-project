@@ -534,4 +534,14 @@ padding: 0 0 20px 0;
 .btn-add-to-cart:hover .btn-corz-2 {
     opacity: 1;
 }
-/* ------------------------------------------------------- */
+/* -------------------------------------------------------фільтер-------------------------------- */
+.filter{
+    width: 270px;
+    height: 845px;
+    background: #8fb4d9 ;
+    opacity: 0.6;
+    margin: 0 30px 0 40px;
+    border-right:2px solid white ;
+    border-top: #fff;
+   
+}
