@@ -270,7 +270,14 @@ body {
         font-weight: 600;
         padding: 0 0 50px 0;
     }
+    .breadcrumbs{
+        margin: 0 0 0 -6px;
+    }
     /*--------------------------sort--------------*/
+    .sort{
+        margin: 0 0 0 -6px;
+    }
+    
      .menu-3 {
          width: 270px;
         list-style: none;
@@ -304,7 +311,7 @@ body {
         
     .sub-menu2{
         position: absolute;
-        left: 76%;
+        left: 70.9%;
         width: 270px;
          opacity: 0;
          top: -10000px;
@@ -338,6 +345,7 @@ body {
          height: 180px;
          position: relative;
          z-index: auto;
+        margin: 0 0 0 -6px;
         
 
      }
@@ -461,7 +469,7 @@ body {
     width: 270px;
     height: 473px;
     padding: 15px 30px 30px 15px;
-    margin: 0 0 30px 0;
+    margin: 0 0 30px -6px;
 }
 .product-body h2{
     font-size: 30px;
@@ -538,6 +546,9 @@ padding: 0 0 20px 0;
     color: white;
     font-size: 36px;
     margin: 45px 0 0 37px;
+}
+.col-md-8 h1{
+    margin: 0 0 0 -6px;
 }
 /* -------------------------------------------------------фільтер-------------------------------- */
 .filter{
