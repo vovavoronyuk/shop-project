@@ -655,3 +655,43 @@ input[type="checkbox"]:checked+label::before{
     padding-top: 40px;
 }
 
+.modal {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.modal-block {
+    width: 300px;
+    margin: 100px auto;
+    height: 200px;
+    border:1px solid grey;
+    background-color: white;
+    border-radius: 6px;
+    padding: 15px;  
+}
+.btn-close {
+    display: flex;
+    justify-content: flex-end;
+}
+.form-title,.form-field {
+    margin: 15px 0;
+}
+.form-field input {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+}
+.form-button {
+    display: flex;
+    justify-content: center;
+}
+.show{
+    display: block;
+}
+.hiden{
+    display: none;
+}
