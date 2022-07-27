@@ -24,3 +24,20 @@ for (let i = 0; i < addToCartBtns.length; i++) {
 //     console.log("clicked forEach");
 //   })
 // );
+
+//змінити лайки//
+
+let likeImg = document.querySelectorAll(".like-img");
+
+console.log(likeImg);
+
+likeImg.forEach((item) =>
+  item.addEventListener("click", function () {
+    // if (item.classList.contains("like-img")) {
+    //   item.classList.remove("like-img");
+    // } else {
+    //   item.classList.add("like-img");
+    // }
+    item.classList.toggle("liked");
+  })
+);

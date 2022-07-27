@@ -417,6 +417,9 @@ body {
       
        
    }
+   .liked{
+       background-color: #2c71b8;
+   }
    .like-img{
        border: 1px solid #2c71b8;
        width: 30px;
