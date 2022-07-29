@@ -1,53 +1,61 @@
-// let productsCount = document.getElementById("products-count");
-// console.log(productsCount);
+let productsCount = document.getElementById("products-count");
+console.log(productsCount);
 
-// let addToCartBtns = document.querySelectorAll(".btn-add-to-cart");
-// console.log(addToCartBtns);
+let addToCartBtns = document.querySelectorAll(".btn-add-to-cart");
+console.log(addToCartBtns);
 
-// for (let i = 0; i < addToCartBtns.length; i++) {
-//   addToCartBtns[i].addEventListener("click", function () {
-//     // перший варыант
-//     // let prevProductsCount = +productsCount.textContent;
-//     // productsCount.textContent = prevProductsCount + 1;
-//     // другий варіант
-//     productsCount.textContent = +productsCount.textContent + 1;
-//   });
-// }
-
-// // addToCartBtns.forEach((item) =>
-// //   item.addEventListener("click", function () {
-// //     // productsCount.innerText =
-// //     //   productsCount.counter >= 1
-// //     //     ? ++productsCount.counter
-// //     //     : (productsCount.counter = 1);
-
-// //     console.log("clicked forEach");
-// //   })
-// // );
+for (let i = 0; i < addToCartBtns.length; i++) {
+  addToCartBtns[i].addEventListener("click", function () {
+    // перший варыант
+    // let prevProductsCount = +productsCount.textContent;
+    // productsCount.textContent = prevProductsCount + 1;
+    // другий варіант
+    productsCount.textContent = +productsCount.textContent + 1;
+  });
+}
 
 // //змінити лайки//
 
-// let likeImg = document.querySelectorAll(".like-img");
+let likeBtns = document.querySelectorAll(".like");
 
-// console.log(likeImg);
-
-// likeImg.forEach((item) =>
-//   item.addEventListener("click", function () {
-//     // if (item.classList.contains("like-img")) {
-//     //   item.classList.remove("like-img");
-//     // } else {
-//     //   item.classList.add("like-img");
-//     // }
-//     item.classList.toggle("liked");
-//   })
-// );
+likeBtns.forEach((item) =>
+  item.addEventListener("click", function () {
+    // if (item.classList.contains("liked")) {
+    //   item.classList.remove("liked");
+    // } else {
+    //   item.classList.add("liked");
+    // }
+    item.classList.toggle("liked");
+  })
+);
+// scales//
+let scaleBtns = document.querySelectorAll(".scale");
+scaleBtns.forEach((item) =>
+  item.addEventListener("click", function () {
+    item.classList.toggle("scales");
+  })
+);
 
 //btn-more-details//
 let moreDetailsBtns = document.querySelectorAll(".btn-more-details");
 let modal = document.querySelector(".modal");
+let btnClose = document.querySelector(".btn-close");
 
-moreDetailsBtns.forEach(item) => item.addEventListener("click",function(){
+function openModal() {
   modal.classList.add("show");
-})
+  modal.classList.remove("hide");
+}
 
+function closeModal() {
+  modal.classList.add("hide");
+  modal.classList.remove("show");
+}
 
+moreDetailsBtns.forEach((item) => item.addEventListener("click", openModal));
+btnClose.addEventListener("click", closeModal);
+
+//-----------slider--------//
+
+$(".slider-block").slick({
+  autoplay: true,
+});
