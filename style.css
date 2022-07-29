@@ -419,10 +419,10 @@ body {
         background-color: #2c71b8;
     }
     .liked{
-        
+        background-image: url(images/heart2.png);
     }
     .scales{
-       
+        background-image: url(images/frames2.png);
     }
       
       /* ---------------------------------------product body------------------------------- */
