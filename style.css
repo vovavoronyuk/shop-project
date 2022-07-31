@@ -354,6 +354,8 @@ body {
   
     .slick-slide img{
         display:inline-block;
+        width: 100%;
+        
     }
     .slick-prev, .slick-next{
         top: 38%;

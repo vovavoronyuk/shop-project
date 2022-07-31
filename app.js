@@ -59,3 +59,10 @@ btnClose.addEventListener("click", closeModal);
 $(".slider-block").slick({
   autoplay: true,
 });
+//--------------- scroll window--------------//
+// функція яка при прокрутці половини тега боді відкриває модальне вікно//
+window.onscroll = function () {
+  if (window.scrollY >= document.body.scrollHeight / 2) {
+    modal.classList.add("show");
+  }
+};
