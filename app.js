@@ -61,8 +61,28 @@ $(".slider-block").slick({
 });
 //--------------- scroll window--------------//
 // функція яка при прокрутці половини тега боді відкриває модальне вікно//
-window.onscroll = function () {
-  if (window.scrollY >= document.body.scrollHeight / 2) {
-    modal.classList.add("show");
+// window.onscroll = function () {
+//   if (window.scrollY >= document.body.scrollHeight / 2) {
+//     modal.classList.add("show");
+//   }
+// };
+// close modal
+
+modal.addEventListener("click", function (e) {
+  if (e.target === modal) {
+    closeModal();
+    window.removeEventListener("scroll", showModalByScroll);
   }
-};
+});
+
+function showModalByScroll() {
+  if (window.pageYOffset > document.body.scrollHeight / 2) {
+    openModal();
+  }
+}
+window.addEventListener("scroll", showModalByScroll);
+
+// задаємо час для вискакування модального вікна
+// setTimeout(() => openModal(), 5000);
+
+AOS.init();
