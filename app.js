@@ -68,21 +68,50 @@ $(".slider-block").slick({
 // };
 // close modal
 
-modal.addEventListener("click", function (e) {
-  if (e.target === modal) {
-    closeModal();
-    window.removeEventListener("scroll", showModalByScroll);
-  }
-});
+// modal.addEventListener("click", function (e) {
+//   if (e.target === modal) {
+//     closeModal();
+//     window.removeEventListener("scroll", showModalByScroll);
+//   }
+// });
 
-function showModalByScroll() {
-  if (window.pageYOffset > document.body.scrollHeight / 2) {
-    openModal();
-  }
-}
-window.addEventListener("scroll", showModalByScroll);
+// function showModalByScroll() {
+//   if (window.pageYOffset > document.body.scrollHeight / 2) {
+//     openModal();
+//   }
+// }
+// window.addEventListener("scroll", showModalByScroll);
 
 // задаємо час для вискакування модального вікна
 // setTimeout(() => openModal(), 5000);
 
-AOS.init();
+// AOS.init();
+//---------------------------------------------
+// const audi = {
+//   model: "A4",
+//   year: "2012",
+//   color: "black",
+// };
+
+// let bmw = {
+//   model: "328",
+//   year: "2010",
+//   color: "gray",
+// };
+
+function Car(model, year, color) {
+  this.model = model;
+  this.year = year;
+  this.color = color;
+
+  this.age = function () {
+    return 2022 - this.year;
+  };
+  console.log(this);
+}
+
+const audi = new Car("A4", 2012, "black");
+const bmw = new Car("328", 2010, "gray");
+
+console.log(audi.age());
+console.log(bmw.age());
