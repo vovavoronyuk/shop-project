@@ -659,3 +659,10 @@ input[type="checkbox"]:checked+label::before{
 .hide{
     display: none;
 }
+ .disabled{
+    border: 1px solid #c4c4c4;
+    color: #c4c4c4;
+}
+.counter{
+    margin: -19px 5px 5px 20px
+}

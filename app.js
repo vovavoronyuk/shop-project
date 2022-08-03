@@ -59,7 +59,7 @@ btnClose.addEventListener("click", closeModal);
 $(".slider-block").slick({
   autoplay: true,
 });
-//--------------- scroll window--------------//
+// --------------- scroll window--------------//
 // функція яка при прокрутці половини тега боді відкриває модальне вікно//
 // window.onscroll = function () {
 //   if (window.scrollY >= document.body.scrollHeight / 2) {
@@ -68,19 +68,19 @@ $(".slider-block").slick({
 // };
 // close modal
 
-// modal.addEventListener("click", function (e) {
-//   if (e.target === modal) {
-//     closeModal();
-//     window.removeEventListener("scroll", showModalByScroll);
-//   }
-// });
+modal.addEventListener("click", function (e) {
+  if (e.target === modal) {
+    closeModal();
+    window.removeEventListener("scroll", showModalByScroll);
+  }
+});
 
-// function showModalByScroll() {
-//   if (window.pageYOffset > document.body.scrollHeight / 2) {
-//     openModal();
-//   }
-// }
-// window.addEventListener("scroll", showModalByScroll);
+function showModalByScroll() {
+  if (window.pageYOffset > document.body.scrollHeight / 2) {
+    openModal();
+  }
+}
+window.addEventListener("scroll", showModalByScroll);
 
 // задаємо час для вискакування модального вікна
 // setTimeout(() => openModal(), 5000);
@@ -99,19 +99,67 @@ $(".slider-block").slick({
 //   color: "gray",
 // };
 
-function Car(model, year, color) {
-  this.model = model;
-  this.year = year;
-  this.color = color;
+// function Car(model, year, color) {
+//   this.model = model;
+//   this.year = year;
+//   this.color = color;
 
-  this.age = function () {
-    return 2022 - this.year;
-  };
-  console.log(this);
+//   this.age = function () {
+//     return 2022 - this.year;
+//   };
+//   console.log(this);
+// }
+
+// const audi = new Car("A4", 2012, "black");
+// const bmw = new Car("328", 2010, "gray");
+
+// console.log(audi.age());
+// console.log(bmw.age());
+
+const counters = document.querySelectorAll("[data-counter]");
+if (counters) {
+  counters.forEach((counter) => {
+    counter.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target.closest(".counter_button")) {
+        let value = parseInt(
+          target.closest(".counter").querySelector("input").value
+        );
+
+        if (target.classList.contains("counter_button_plus")) {
+          value++;
+        } else {
+          --value;
+        }
+
+        if (value <= 0) {
+          value = 0;
+          target
+            .closest(".counter")
+            .querySelector(".counter_button_minus")
+            .classList.add("disabled");
+        } else {
+          target
+            .closest(".counter")
+            .querySelector(".counter_button_minus")
+            .classList.remove("disabled");
+        }
+
+        if (value > 5) {
+          value = 5;
+          target
+            .closest(".counter")
+            .querySelector(".counter_button_plus")
+            .classList.add("disabled");
+        } else {
+          target
+            .closest(".counter")
+            .querySelector(".counter_button_plus")
+            .classList.remove("disabled");
+        }
+
+        target.closest(".counter").querySelector("input").value = value;
+      }
+    });
+  });
 }
-
-const audi = new Car("A4", 2012, "black");
-const bmw = new Car("328", 2010, "gray");
-
-console.log(audi.age());
-console.log(bmw.age());
